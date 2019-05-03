@@ -1,5 +1,5 @@
-Redmine::Plugin.register :custom_login do
-  name 'Custom Login plugin'
+Redmine::Plugin.register :redmine_custom_login do
+  name 'Redmine Custom Login plugin'
   author 'Author name'
   description 'This is a plugin for Redmine'
   version '0.0.1'
