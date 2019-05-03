@@ -6,3 +6,13 @@ Redmine::Plugin.register :redmine_custom_login do
   url 'http://example.com/path/to/plugin'
   author_url 'https://github.com/nabbisen'
 end
+
+class CustomFooterHookViewListener < Redmine::Hook::ViewListener
+  def view_account_login_top(context={})
+    plugin_name = File.basename(__dir__)
+    login_header_content = image_tag('logo.jpg', :plugin => plugin_name, :style => 'border-radius: 1em;')
+    [
+      "<div style=\"text-align:center;padding:2.4em 0 0.5em;\">#{login_header_content}</div>",
+    ]
+  end
+end
