@@ -7,7 +7,7 @@ Redmine::Plugin.register :redmine_custom_login do
   author_url 'https://github.com/nabbisen'
 end
 
-class CustomFooterHookViewListener < Redmine::Hook::ViewListener
+class RedmineCustomFooterHookViewListener < Redmine::Hook::ViewListener
   def view_layouts_base_html_head(context={})
     [
       "<style>@media screen and (max-width: 899px){body.action-login #header{display:flex;flex-direction:row-reverse;justify-content:space-b    etween;align-items:center;}body.action-login #header>h1{display:block !important;margin-left:54px;font-size:1.2em;}}</style>",
